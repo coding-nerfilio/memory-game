@@ -1,0 +1,134 @@
+@font-face {
+	font-family: font;
+	src: url("./font.ttf");
+}
+
+html {
+	font-display: arial;
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
+	animation: gradient 5s ease infinite;
+	font-family: font !important;
+}
+
+.header {
+	font-size: 4rem;
+	user-select: none;
+	animation: bigAndSmall 3s ease infinite;
+	display: inline;
+}
+
+@keyframes bigAndSmall {
+	0% {
+		transform: scale(0.9);
+	}
+	50% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+.turn {
+	font-size: 3rem;
+	user-select: none;
+}
+
+.best {
+	font-size: 1.5rem;
+	user-select: none;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.text {
+	user-select: none;
+}
+
+.block {
+	transition: linear 1s;
+	font-size: 2em;
+	border: dashed #3a3a3a 1.2px;
+}
+
+.block.idle {
+	background-color: rgba(145, 6, 99, 0.2);
+}
+.block.idle .text {
+	opacity: 0;
+}
+
+.block.hovered {
+	background-color: rgba(0, 255, 255, 0.2);
+}
+.block .text {
+	opacity: 1;
+}
+
+.block.selected {
+	background-color: rgba(0, 255, 255, 0.2);
+}
+
+.block.selected .text {
+	animation: bigAndSmall 0.5s ease infinite;
+}
+
+.block.solved {
+	background-color: rgba(0, 255, 255, 0.2);
+}
+
+.rainbow {
+	animation: rainbow 5s infinite;
+	text-shadow: 0 0 2px #fff;
+	font-size: 3rem;
+}
+
+@keyframes rainbow {
+	0% {
+		color: orange;
+	}
+	10% {
+		color: purple;
+	}
+	20% {
+		color: red;
+	}
+	30% {
+		color: CadetBlue;
+	}
+	40% {
+		color: yellow;
+	}
+	50% {
+		color: coral;
+	}
+	60% {
+		color: green;
+	}
+	70% {
+		color: cyan;
+	}
+	80% {
+		color: DeepPink;
+	}
+	90% {
+		color: DodgerBlue;
+	}
+	100% {
+		color: orange;
+	}
+}
