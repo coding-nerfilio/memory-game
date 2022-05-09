@@ -10,7 +10,7 @@ const PauseModal = (props: { store: Store; ModalFunctions: ModalFunctions }) => 
 			<div
 				className="button p-2 mb-2 text-white"
 				onClick={() => {
-					props.store.dispatch({ type: "initial_state", payload: 42 });
+					props.store.dispatch({ type: "initial_state", payload: props.store.state.blocks.length });
 					props.ModalFunctions.hideModal();
 				}}
 			>
