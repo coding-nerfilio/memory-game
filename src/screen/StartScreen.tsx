@@ -7,8 +7,11 @@ const StartScreen = (props: { ModalFunctions: ModalFunctions }) => {
 	const navigate = useNavigate();
 
 	return (
-		<Container className="pt-5">
-			<Row className="mt-6 mx-3">
+		<Container className="mt-5">
+			<Row className="mx-3">
+				<h1 className="text-center text-white">MAIN MENU</h1>
+			</Row>
+			<Row className="mt-5 mx-3">
 				<div className="button text-white p-2" onClick={() => navigate("/difficulty")}>
 					<h3>START</h3>
 				</div>
