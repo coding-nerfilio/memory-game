@@ -7,7 +7,7 @@ const Version = (props: { ModalFunctions: ModalFunctions }) => {
 			className="d-flex text-light m-0 mt-auto mb-2 justify-content-end align-items-center me-4"
 			onClick={() => props.ModalFunctions.showModal("", <AboutModal />)}
 		>
-			MemoryGame {process.env.REACT_APP_VERSION}
+			Memory Game {process.env.REACT_APP_VERSION}
 		</div>
 	);
 };
