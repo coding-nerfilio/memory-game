@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useBest = () => {
+const useBest = (size: number) => {
 	const [best, setBest] = useState(0);
-
+	const itemName = `best${size}`;
 	const handleChangeBest = (newValue) => {
 		if (newValue < best || best === 0) {
-			localStorage.setItem("best", String(newValue));
+			localStorage.setItem(itemName, String(newValue));
 			setBest(newValue);
 			return true;
 		}
@@ -13,7 +13,7 @@ const useBest = () => {
 	};
 
 	useEffect(() => {
-		const b = localStorage.getItem("best");
+		const b = localStorage.getItem(itemName);
 		if (b === null) {
 			setBest(0);
 		} else {

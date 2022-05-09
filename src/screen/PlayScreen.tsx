@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Container from "react-bootstrap/Container";
 import "../assets/style.css";
 import useBest from "../hook/useBest";
@@ -10,11 +10,24 @@ import Score from "../component/Score";
 import BlockContainer from "../component/BlockContainer";
 import WinModal from "../modal/WinModal";
 import { IUseSound } from "src/hook/useSound";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PlayScreen = ({ store, sound }: { store: Store; sound: IUseSound }) => {
-	const size = 42;
-	const best = useBest();
+	const [show, setShow] = useState(false);
+	const location: any = useLocation();
+	const navigate = useNavigate();
+	const size = location.state?.size || 0;
+	const best = useBest(size);
 	const modal = useModal();
+
+	useEffect(() => {
+		if (size !== 0) {
+			store.dispatch({ type: "initial_state", payload: size });
+			setShow(true);
+			return;
+		}
+		navigate("/");
+	}, []);
 
 	const onBlockClick: onBlockClick = (id, blockIndex) => {
 		if (store.state.blockedGame) {
@@ -71,9 +84,9 @@ const PlayScreen = ({ store, sound }: { store: Store; sound: IUseSound }) => {
 	return (
 		<>
 			<Modal modalData={modal.modalData} />
-			<Container fluid className="d-flex flex-column">
+			<Container fluid className="d-flex flex-column h-100">
 				<Score turn={store.state.turn} best={best.value} />
-				<BlockContainer blocks={store.state.blocks} onBlockClick={onBlockClick} />
+				{show && <BlockContainer blocks={store.state.blocks} onBlockClick={onBlockClick} />}
 			</Container>
 		</>
 	);
