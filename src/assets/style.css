@@ -14,13 +14,6 @@ body {
 	font-family: font !important;
 }
 
-.header {
-	font-size: 4rem;
-	user-select: none;
-	animation: bigAndSmall 3s ease infinite;
-	display: inline;
-}
-
 @keyframes bigAndSmall {
 	0% {
 		transform: scale(0.9);
@@ -131,4 +124,22 @@ body {
 	100% {
 		color: orange;
 	}
+}
+
+.button {
+	background-color: rgb(196, 67, 135);
+	border: 2px solid white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button.header {
+	width: 32px;
+	height: 32px;
+	padding: 10px;
+}
+
+.button:hover {
+	background-color: rgb(226, 52, 145);
 }

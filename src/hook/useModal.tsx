@@ -12,7 +12,16 @@ interface IShowModal {
 	(title: JSX.Element | string, body: JSX.Element | string, onHideDo?: () => void): void;
 }
 
-const useModal = () => {
+interface IHideModal {
+	(): void;
+}
+
+type ModalFunctions = {
+	showModal: IShowModal;
+	hideModal: IHideModal;
+};
+
+const useModal = (): { modalData: ModalState & { onHide: () => void }; Functions: ModalFunctions } => {
 	const [modalState, setModalState] = useState<ModalState>({
 		show: false,
 		title: "",
@@ -34,9 +43,13 @@ const useModal = () => {
 		modalState.onHideDo !== undefined && modalState.onHideDo();
 	};
 
+	const hideModal: IHideModal = () => {
+		setModalState({ ...modalState, show: false });
+	};
+
 	return {
 		modalData: { ...modalState, onHide },
-		showModal,
+		Functions: { showModal, hideModal },
 	};
 };
 
@@ -51,4 +64,4 @@ const Modal = ({ modalData }: { modalData: ModalState & { onHide: () => void } }
 	);
 };
 
-export { useModal, Modal, IShowModal, ModalState };
+export { useModal, Modal, ModalState, ModalFunctions };
