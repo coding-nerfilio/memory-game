@@ -1,16 +1,14 @@
-import { useEffect, useReducer, useState } from "react";
-import Container from "react-bootstrap/Container";
-import "../assets/style.css";
-import useBest from "../hook/useBest";
-import { Modal, useModal } from "../hook/useModal";
-import { initialState, reducer } from "../reducer";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Store, onBlockClick } from "../types";
-import Header from "../component/Header";
+import { Modal, useModal } from "../hook/useModal";
+import { IUseSound } from "src/hook/useSound";
+import Container from "react-bootstrap/Container";
 import Score from "../component/Score";
 import BlockContainer from "../component/BlockContainer";
 import WinModal from "../modal/WinModal";
-import { IUseSound } from "src/hook/useSound";
-import { useLocation, useNavigate } from "react-router-dom";
+import useBest from "../hook/useBest";
+import "../assets/style.css";
 
 const PlayScreen = ({ store, sound }: { store: Store; sound: IUseSound }) => {
 	const [show, setShow] = useState(false);

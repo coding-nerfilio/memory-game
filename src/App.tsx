@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Header from "./component/Header";
-import StartScreen from "./screen/StartScreen";
-import DifficultyScreen from "./screen/DifficultyScreen";
-import PlayScreen from "./screen/PlayScreen";
 import { Modal, useModal } from "./hook/useModal";
 import { useSound } from "./hook/useSound";
 import { useReducer } from "react";
 import { initialState, reducer } from "./reducer";
-import Version from "./component/Version";
 import { Container } from "react-bootstrap";
+import Header from "./component/Header";
+import StartScreen from "./screen/StartScreen";
+import DifficultyScreen from "./screen/DifficultyScreen";
+import PlayScreen from "./screen/PlayScreen";
+import Version from "./component/Version";
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState(42));

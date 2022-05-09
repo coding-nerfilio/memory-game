@@ -1,4 +1,4 @@
-import { Col, Navbar, Row } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ModalFunctions } from "src/hook/useModal";
 import { IUseSound } from "src/hook/useSound";
