@@ -7,6 +7,8 @@ import { Modal, useModal } from "./hook/useModal";
 import { useSound } from "./hook/useSound";
 import { useReducer } from "react";
 import { initialState, reducer } from "./reducer";
+import Version from "./component/Version";
+import { Container } from "react-bootstrap";
 
 const App = () => {
 	const [state, dispatch] = useReducer(reducer, initialState(42));
@@ -14,16 +16,17 @@ const App = () => {
 	const modal = useModal();
 
 	return (
-		<>
+		<Container fluid className="d-flex flex-column p-0 h-100 w-100 min-vh-100">
 			<Modal modalData={modal.modalData} />
 			<Header store={{ state, dispatch }} ModalFunctions={modal.Functions} sound={sound} />
 			<Routes>
-				<Route path="/" element={<StartScreen />} />
+				<Route path="/" element={<StartScreen ModalFunctions={modal.Functions} />} />
 				<Route path="/difficulty" element={<DifficultyScreen />} />
 				<Route path="/game" element={<PlayScreen store={{ state, dispatch }} sound={sound} />} />
 				<Route path="*" element={<Navigate to="/" />} />
 			</Routes>
-		</>
+			<Version ModalFunctions={modal.Functions} />
+		</Container>
 	);
 };
 
