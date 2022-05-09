@@ -4,7 +4,7 @@ import Block from "./Block";
 
 const BlockContainer = (props: { blocks: Array<BlockType>; onBlockClick: onBlockClick }) => {
 	return (
-		<Row className=" h-100 px-4 justify-content-center align-items-center">
+		<Row className="mt-auto mb-auto px-4 justify-content-center align-items-center">
 			<Col md={4}>
 				<Row>
 					{props.blocks.map((b, i) => (
