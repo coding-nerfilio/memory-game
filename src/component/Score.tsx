@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 
 const Score = (props: { turn: number; best: number }) => {
 	return (
-		<Row className="text-center  mt-3">
+		<Row className="text-center  mt-3 text-white">
 			<Col xs={12} className="turn">
 				TURN: {props.turn}
 			</Col>
