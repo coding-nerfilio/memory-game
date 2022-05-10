@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/memory-game/static/css/main.9dea740f.css",
-    "main.js": "/memory-game/static/js/main.2ae58eb4.js",
+    "main.js": "/memory-game/static/js/main.bb6e4a9e.js",
     "static/media/solved.wav": "/memory-game/static/media/solved.01768d114e0331e6c05a.wav",
     "static/media/best.wav": "/memory-game/static/media/best.ce2d94cfc6b215916553.wav",
     "static/media/bootstrap-icons.woff?": "/memory-game/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
@@ -12,10 +12,10 @@
     "static/media/sound.mp3": "/memory-game/static/media/sound.ffa1f9764b27c838a57c.mp3",
     "index.html": "/memory-game/index.html",
     "main.9dea740f.css.map": "/memory-game/static/css/main.9dea740f.css.map",
-    "main.2ae58eb4.js.map": "/memory-game/static/js/main.2ae58eb4.js.map"
+    "main.bb6e4a9e.js.map": "/memory-game/static/js/main.bb6e4a9e.js.map"
   },
   "entrypoints": [
     "static/css/main.9dea740f.css",
-    "static/js/main.2ae58eb4.js"
+    "static/js/main.bb6e4a9e.js"
   ]
 }
