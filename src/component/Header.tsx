@@ -33,7 +33,7 @@ const GameLogo = () => {
 const BackButton = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="button header ms-4 mb-3" onClick={() => navigate("/")}>
+		<div className="button header ms-4 mb-3" onClick={() => navigate(-1)}>
 			<i className="bi-arrow-left" />
 		</div>
 	);

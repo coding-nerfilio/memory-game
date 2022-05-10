@@ -19,7 +19,7 @@ const PauseModal = (props: { store: Store; ModalFunctions: ModalFunctions }) => 
 			<div
 				className="button p-2 mb-2 text-white"
 				onClick={() => {
-					navigate("/");
+					navigate(-2);
 					props.ModalFunctions.hideModal();
 				}}
 			>
