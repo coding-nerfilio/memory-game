@@ -28,7 +28,6 @@
 
 ## ⚡️ Quick start
 
----
 
 1. First, download and install **NODE**.
 
